@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour
             {
                 // Spawn a new projectile prefab at the enemy's position and rotation
                 GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
-                projectile.transform.parent = this.transform;
+                projectile.transform.parent = EnemySpawner.Instance.enemySpawnPositions[0].transform;
                 // Calculate the direction to the player
                 Vector3 direction = (player.transform.position - transform.position).normalized;
 
