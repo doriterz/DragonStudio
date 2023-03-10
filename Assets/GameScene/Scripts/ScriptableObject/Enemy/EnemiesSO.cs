@@ -9,9 +9,9 @@ public class EnemiesSO : ScriptableObject
 {
     public string enemyName;
     public Sprite enemySprite;
-
     public float enemyHP;
     public float enemyDamage;
     public float enemyAtkSpeed;
 
+    public Sprite projectileSprite;
 }

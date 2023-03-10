@@ -17,3 +17,4 @@ MonoBehaviour:
   enemyHP: 10
   enemyDamage: 1
   enemyAtkSpeed: 1
+  projectileSprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}

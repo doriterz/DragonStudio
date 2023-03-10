@@ -1443,7 +1443,7 @@ MonoBehaviour:
   - {fileID: 1417753576}
   - {fileID: 1340273727}
   - {fileID: 176747374}
-  spawnDelay: 2
+  spawnDelay: 1
   stopLine: {fileID: 1428258509}
   shootStartLine: {fileID: 1064908342}
   enemyKillCount: 0

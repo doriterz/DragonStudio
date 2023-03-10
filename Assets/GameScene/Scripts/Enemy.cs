@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     public float projectileSpeed = 10f;
     public float speed = 5f;
     public GameObject projectilePrefab;
+    public Sprite enemyProjectileSprite;
 
     private float lastProjectileTime;
     private bool withinShootRange;
@@ -63,6 +64,8 @@ public class Enemy : MonoBehaviour
             {
                 // Spawn a new projectile prefab at the enemy's position and rotation
                 GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
+                projectile.GetComponent<SpriteRenderer>().sprite = enemyProjectileSprite;
+
                 projectile.transform.parent = EnemySpawner.Instance.enemySpawnPositions[0].transform;
                 // Calculate the direction to the player
                 Vector3 direction = (player.transform.position - transform.position).normalized;

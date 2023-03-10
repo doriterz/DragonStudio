@@ -59,6 +59,7 @@ public class EnemySpawner : MonoBehaviour
                 enemy.enemyDamage = enemiesListSO.enemiesSO[randomEnemyIndex].enemyDamage * (currentLevel + 1);
                 enemy.projectileCooldown = enemiesListSO.enemiesSO[randomEnemyIndex].enemyAtkSpeed / (currentLevel + 1);
                 enemy.enemyHP = enemiesListSO.enemiesSO[randomEnemyIndex].enemyHP * (currentLevel + 1);
+                enemy.enemyProjectileSprite = enemiesListSO.enemiesSO[randomEnemyIndex].projectileSprite;
 
                 enemySpawnCount++;
                 enemyDamageTest = enemy.enemyDamage;
