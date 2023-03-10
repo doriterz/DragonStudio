@@ -5,11 +5,18 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public static Enemy Instance;
+
+    private Health health;
+
+    [Header("Changing Variable")]
     public float enemyDamage = 10f;
+    public float projectileCooldown = 2f;
+    public float enemyHP = 10f;
+
+    [Header("Fixed Variables")]
+    public float projectileSpeed = 10f;
     public float speed = 5f;
     public GameObject projectilePrefab;
-    public float projectileSpeed = 10f;
-    public float projectileCooldown = 2f;
 
     private float lastProjectileTime;
     private bool withinShootRange;
@@ -18,7 +25,11 @@ public class Enemy : MonoBehaviour
     {
         Instance = this;
     }
-
+    private void Start()
+    {
+        health = this.GetComponent<Health>();
+        health.maxHP = enemyHP;
+    }
 
     // Update is called once per frame
     void Update()

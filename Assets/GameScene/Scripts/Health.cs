@@ -5,8 +5,8 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     public static Health Instance;
-    public int maxHP = 100;
-    public int currentHP;
+    public float maxHP = 100;
+    public float currentHP;
 
 
     private void Awake()
@@ -18,6 +18,7 @@ public class Health : MonoBehaviour
     void Start()
     {
         // Set the current HP to the max HP at the start of the game
+
         currentHP = maxHP;
     }
 
@@ -27,12 +28,13 @@ public class Health : MonoBehaviour
         // Check if the entity's current HP is zero or less
         if (currentHP <= 0)
         {
+            EnemySpawner.Instance.enemyKillCount++;
             // Destroy the entity if its current HP is zero or less
             Destroy(gameObject);
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         // Subtract the damage from the entity's current HP
         currentHP -= damage;
